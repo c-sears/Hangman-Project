@@ -65,7 +65,7 @@ document.onkeyup = function(event)
 
     if ((event.keyCode > 64 && event.keyCode < 91) && !letters.includes(keyPressed))
     {
-
+        letters += keyPressed;
         if(word.toLowerCase().includes(keyPressed))
         {
             fillInBlanks(keyPressed);
@@ -85,7 +85,13 @@ document.onkeyup = function(event)
         {
             guesses--;
         }
-        letters += keyPressed;
+        
+        if(guesses < 1)
+        {
+            score = 0;
+            window.alert("you lost");
+            pickWord();
+        }
         drawToScreen();
     }
 }
