@@ -19,9 +19,9 @@ function fillInBlanks(x)
 {
     for(var i =0; i < word.length; i++)
     {
-        if(word.indexOf(i) == x)
+        if(word.indexOf(x) == i)
         {
-            word = word.slice(0,i) + x + word.slice(i,word.length);
+            dashes = dashes.slice(0,i) + x + dashes.slice(i,dashes.length);
             correct++;
         }
     }
@@ -34,7 +34,7 @@ function pickWord()
     if(words.length > 0)
     {
         var rand = Math.floor(Math.random()*words.length);
-        word = words[rand]
+        word = words[rand].toLowerCase();
         for(var i = 0; i < word.length; i++)
         {
             if(word.indexOf(i) == " ")
@@ -58,7 +58,8 @@ function pickWord()
 
 document.onkeyup = function(event)
 {
-    var keyPressed = event.key;
+    var keyPressed = event.key.toLowerCase();
+
     if(correct == word.length)
     {
         window.alert("You got it!\nthe word was:" + word);
@@ -71,8 +72,8 @@ document.onkeyup = function(event)
     }
     if ((event.keyCode > 64 && event.keyCode < 91) && !letters.includes(keyPressed))
     {
-        console.log(keyPressed);
-        if(word.includes(keyPressed))
+        
+        if(word.toLowerCase().includes(keyPressed))
         {
             fillInBlanks(keyPressed);
         }
