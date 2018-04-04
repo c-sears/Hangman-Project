@@ -80,7 +80,7 @@ document.onkeyup = function(event)
         {
             guesses--;
         }
-        letters.push(keyPressed);
+        letters += keyPressed;
         drawToScreen();
     }
 }
