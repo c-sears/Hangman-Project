@@ -37,9 +37,9 @@ function pickWord()
         word = words[rand].toLowerCase();
         for(var i = 0; i < word.length; i++)
         {
-            if(word.indexOf(i) == " ")
+            if(word[i] == " ")
             {
-                dashes += " "; 
+                dashes += " ";
                 correct++;
             }
             else
@@ -75,7 +75,7 @@ document.onkeyup = function(event)
     }
     if ((event.keyCode > 64 && event.keyCode < 91) && !letters.includes(keyPressed))
     {
-        
+
         if(word.toLowerCase().includes(keyPressed))
         {
             fillInBlanks(keyPressed);
