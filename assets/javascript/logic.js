@@ -21,7 +21,7 @@ function fillInBlanks(x)
     {
         if(word.indexOf(x) == i)
         {
-            dashes = dashes.slice(0,i) + x + dashes.slice(i,dashes.length);
+            dashes = dashes.slice(0,i) + x + dashes.slice(i+1,dashes.length);
             correct++;
         }
     }
@@ -47,6 +47,8 @@ function pickWord()
                 dashes += "_";
             }
         }
+        console.log(word);
+        guesses = 15 - word.length;
         words.splice(rand, 1);
         drawToScreen();
     }
