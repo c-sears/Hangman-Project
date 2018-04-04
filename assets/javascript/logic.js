@@ -30,6 +30,7 @@ function fillInBlanks(x)
 function pickWord()
 {
     letters = "";
+    dashes = "";
     correct = 0;
     if(words.length > 0)
     {
@@ -62,23 +63,23 @@ document.onkeyup = function(event)
 {
     var keyPressed = event.key.toLowerCase();
 
-    if(correct == word.length)
-    {
-        window.alert("You got it!\nthe word was:" + word);
-        score++;
-        if(score > highScore)
-        {
-            highScore = score;
-            document.getElementById("high-score").innerText = highScore;
-        }
-        pickWord();
-    }
     if ((event.keyCode > 64 && event.keyCode < 91) && !letters.includes(keyPressed))
     {
 
         if(word.toLowerCase().includes(keyPressed))
         {
             fillInBlanks(keyPressed);
+            if(correct == word.length)
+            {
+                window.alert("You got it!\nthe word was:" + word);
+                score++;
+                if(score > highScore)
+                {
+                    highScore = score;
+                    document.getElementById("high-score").innerText = highScore;
+                }
+                pickWord();
+            }
         }
         else
         {
