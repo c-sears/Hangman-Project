@@ -69,9 +69,10 @@ document.onkeyup = function(event)
         }
         pickWord();
     }
-    if ((event.keyCode > 64 && event.keyCode < 91) && !letters.contains(keyPressed))
+    if ((event.keyCode > 64 && event.keyCode < 91) && !letters.includes(keyPressed))
     {
-        if(word.contains(keyPressed))
+        console.log(keyPressed);
+        if(word.includes(keyPressed))
         {
             fillInBlanks(keyPressed);
         }
@@ -84,7 +85,7 @@ document.onkeyup = function(event)
     }
 }
 
-document.onload = function()
+window.onload = function()
 {
     pickWord();
 }
