@@ -6,6 +6,6 @@ body {
     background: transparent;
 }
 
-#dashes {
+#dashes, #letters {
     letter-spacing: 10px;
 }

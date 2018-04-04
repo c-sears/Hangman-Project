@@ -69,6 +69,7 @@ document.onkeyup = function(event)
         if(score > highScore)
         {
             highScore = score;
+            document.getElementById("high-score").innerText = highScore;
         }
         pickWord();
     }
