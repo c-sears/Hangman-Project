@@ -49,7 +49,7 @@ function pickWord()
             }
         }
         console.log(word);
-        guesses = 15 - word.length;
+        guesses = Math.floor(word.length * 0.75);
         words.splice(rand, 1);
         drawToScreen();
     }
