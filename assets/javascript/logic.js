@@ -19,7 +19,7 @@ function fillInBlanks(x)
 {
     for(var i =0; i < word.length; i++)
     {
-        if(word.indexOf(x) == i)
+        if(word[i] == x)
         {
             dashes = dashes.slice(0,i) + x + dashes.slice(i+1,dashes.length);
             correct++;
