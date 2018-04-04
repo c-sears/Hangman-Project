@@ -56,7 +56,7 @@ function pickWord()
     }
 }
 
-document.onkeyup(event)
+document.onkeyup = function(event)
 {
     var keyPressed = event.key;
     if(correct == word.length)
@@ -84,7 +84,7 @@ document.onkeyup(event)
     }
 }
 
-document.onload()
+document.onload = function()
 {
     pickWord();
 }
